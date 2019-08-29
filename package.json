@@ -24,6 +24,7 @@
     "bootstrap": "^4.3.1",
     "chart.js": "^2.8.0",
     "currency-formatter": "^1.5.5",
+    "guid-typescript": "^1.0.9",
     "jquery": "^3.4.1",
     "m": "^1.5.4",
     "moment": "^2.24.0",

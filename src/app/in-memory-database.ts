@@ -1,19 +1,34 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Category } from './pages/categories/Shared/Category.model';
+import { Collaborator } from './pages/collaborators/Shared/collaborator.model';
+
 
 
 
 export class InMemoryDataBase implements InMemoryDbService {
     createDb() {
-        const categories: Category[] = [
-            { id: 1, nome: 'lazer', description: 'aqui' },
-            { id: 2, nome: 'lazer2', description: 'aqui' },
-            { id: 3, nome: 'lazer3', description: 'aqui' },
-            { id: 4, nome: 'lazer4', description: 'aqui' },
-            { id: 5, nome: 'lazer5', description: 'aqui' }
+        const collaborators: Collaborator[] = [
+            {
+                id: "1",                
+                FirstName: "Diego",
+                LastName: "Rodrigo",
+                Document: "12345678909",
+                Email: "diego.rrfc@gmail.com",
+                Phone: "9304049302",
+                Salary: '10000',
+                ProjectName: "string",
+                BirthDate: '2010-01-16',
+                Street: "Caisa do apolo",
+                Number: "1234",
+                District: "Recife Antigo",
+                City: "Recife",
+                Country: "Brasil",
+                ZipCode: "5600000",
+                JobTitle: "Desenvolvedor",
+            }
+
 
         ];
-        console.log('Diego', { categories });
-        return { categories };
+        console.log('Diego', { collaborators });
+        return { collaborators };
     }
 }

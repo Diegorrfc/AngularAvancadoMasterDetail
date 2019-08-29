@@ -1,0 +1,176 @@
+<nav class="mb-5">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+        <li class="breadcrumb-item"><a [routerLink]="['/collaborators']">Collaborators</a></li>
+        <li class="breadcrumb-item active">{{pageTitle}}</li>
+
+    </ol>
+</nav>
+<div class="row mb-4">
+    <div class="col-md">
+        <h1 class="h2 border-left pl-2">
+           {{pageTitle}}
+        </h1>
+    </div>
+    <div class="col-md">
+        <a [routerLink]="['/collaborators']" class="btn btn-light float-right">
+            << Voltar 
+        </a>
+     </div>
+     </div>
+     
+     <form [formGroup]="collaboratorFrom" (submit)="submitForm()">
+            <div class="card">
+                <div class="card-header">
+                    Informações sobre o colaborador
+                </div>           
+                
+
+            <div class="card-body">
+                 <div class="form-row">                    
+                    <div class="form-group col-md-4">
+                            <label for="FirstName">Primeiro Nome</label>
+                            <input type="text" class="form-control" id="FirstName" formControlName="FirstName">
+                           
+                            <div class="text-danger" *ngIf="collaboratorFrom.get('FirstName').invalid && collaboratorFrom.get('FirstName').touched ">
+                                <div *ngIf="collaboratorFrom.get('FirstName').errors.required">Dado obrigatório</div>
+                                <div *ngIf="collaboratorFrom.get('FirstName').errors.minlength">deve ter no minimo 4 caracteres</div>
+                            </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                            <label for="nome">Último Nome</label>
+                            <input type="text" class="form-control" id="LastName" formControlName="LastName">
+                            <div class="text-danger" *ngIf="collaboratorFrom.get('LastName').invalid && collaboratorFrom.get('LastName').touched ">
+                                <div *ngIf="collaboratorFrom.get('LastName').errors.required">Dado obrigatório</div>
+                                <div *ngIf="collaboratorFrom.get('LastName').errors.minlength">deve ter no minimo 4 caracteres</div>
+                            </div>
+                    </div>
+                <div class="form-group col-md-4">
+                            <label for="Document">Documento</label>
+                            <input type="text" class="form-control" id="Document" formControlName="Document">
+                            <div class="text-danger" *ngIf="collaboratorFrom.get('Document').invalid && collaboratorFrom.get('Document').touched ">
+                                <div *ngIf="collaboratorFrom.get('Document').errors.required">Dado obrigatório</div>
+                                <div *ngIf="collaboratorFrom.get('Document').errors.minlength">deve ter no minimo 4 caracteres</div>
+                            </div>
+                 </div>
+                
+                
+                <div class="form-group col-md-4">
+                        <label for="nome">Email</label>
+                        <input type="text" class="form-control" id="Email" formControlName="Email">
+                        <div class="text-danger" *ngIf="collaboratorFrom.get('Email').invalid && collaboratorFrom.get('Email').touched ">
+                            <div *ngIf="collaboratorFrom.get('Email').errors.required">Dado obrigatório</div>
+                            <div *ngIf="collaboratorFrom.get('Email').errors.minlength">deve ter no minimo 4 caracteres</div>
+                        </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Número do telefone</label>
+                    <input type="text" class="form-control" id="Phone" formControlName="Phone">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('Phone').invalid && collaboratorFrom.get('Phone').touched ">
+                        <div *ngIf="collaboratorFrom.get('Phone').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('Phone').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Nome do Projeto</label>
+                    <input type="text" class="form-control" id="ProjectName" formControlName="ProjectName">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('ProjectName').invalid && collaboratorFrom.get('ProjectName').touched ">
+                        <div *ngIf="collaboratorFrom.get('ProjectName').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('ProjectName').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+               
+               
+                
+                <div class="form-group col-md-4">
+                    <label for="nome">Cargo</label>
+                    <input type="text" class="form-control" id="JobTitle" formControlName="JobTitle">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('JobTitle').invalid && collaboratorFrom.get('JobTitle').touched ">
+                        <div *ngIf="collaboratorFrom.get('JobTitle').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('JobTitle').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Salário</label>
+                    <input type="text" class="form-control" id="Salary" formControlName="Salary">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('JobTitle').invalid && collaboratorFrom.get('Salary').touched ">
+                        <div *ngIf="collaboratorFrom.get('Salary').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('Salary').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                
+
+                <div class="form-group col-md-4">
+                    <label for="nome">Data de Nascimento</label>
+                    <input type="text" class="form-control" id="BirthDate" formControlName="BirthDate">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('BirthDate').invalid && collaboratorFrom.get('BirthDate').touched ">
+                        <div *ngIf="collaboratorFrom.get('BirthDate').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('BirthDate').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                             
+                
+               
+                <div class="form-group col-md-4">
+                    <label for="nome">Rua</label>
+                    <input type="text" class="form-control" id="Street" formControlName="Street">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('Street').invalid && collaboratorFrom.get('Street').touched ">
+                        <div *ngIf="collaboratorFrom.get('Street').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('Street').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Numero da rua</label>
+                    <input type="text" class="form-control" id="Number" formControlName="Number">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('Number').invalid && collaboratorFrom.get('Number').touched ">
+                        <div *ngIf="collaboratorFrom.get('Number').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('Number').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Bairro</label>
+                    <input type="text" class="form-control" id="District" formControlName="District">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('Number').invalid && collaboratorFrom.get('Number').touched ">
+                        <div *ngIf="collaboratorFrom.get('Number').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('Number').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Cidade</label>
+                    <input type="text" class="form-control" id="City" formControlName="City">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('City').invalid && collaboratorFrom.get('City').touched ">
+                        <div *ngIf="collaboratorFrom.get('City').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('City').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Cep</label>
+                    <input type="text" class="form-control" id="ZipCode" formControlName="ZipCode">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('ZipCode').invalid && collaboratorFrom.get('ZipCode').touched ">
+                        <div *ngIf="collaboratorFrom.get('ZipCode').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('ZipCode').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="nome">Pais</label>
+                    <input type="text" class="form-control" id="Country" formControlName="Country">
+                    <div class="text-danger" *ngIf="collaboratorFrom.get('Country').invalid && collaboratorFrom.get('Country').touched ">
+                        <div *ngIf="collaboratorFrom.get('Country').errors.required">Dado obrigatório</div>
+                        <div *ngIf="collaboratorFrom.get('Country').errors.minlength">deve ter no minimo 4 caracteres</div>
+                    </div>
+                </div>            
+                
+                </div>                
+               
+            </div>
+            </div>
+            <div class="alert alert-danger mt-4" *ngIf="serverErrorMessages">
+                <strong>Erro no servidor</strong>
+                <ul>
+                    <li *ngFor="let error of serverErrorMessages">{{error}}</li>
+                </ul>
+
+            </div>
+           
+            <button [disabled]="submittingForm || collaboratorFrom.invalid" type="submit" class="btn btn-primary btn-lg float-right mt-3">Salvar</button>
+        </form>
