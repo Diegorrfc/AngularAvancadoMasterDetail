@@ -13,16 +13,16 @@ export class CategoryService {
 
   constructor(private http: HttpClient) { }
 
-  getAll(): Observable<Category[]> {    
+  getAll(): Observable<Category[]> {
     const k = this.http.get(this.aíPath).pipe(
       catchError(this.handlerError),
       map(this.jsonDataTocategories)
     );
-    this.getui();    
+    this.getui();
     return k;
 
   }
-  getui(){
+  getui() {
     console.log(this.http.get(this.aíPath));
   }
   getById(id: number): Observable<Category> {
@@ -39,7 +39,7 @@ export class CategoryService {
     const categories: Category[] = [];
     jsonData.forEach(element => categories.push(element as Category));
     categories.forEach(element => {
-      console.log(element.id)
+      console.log(element.id);
     });
     return categories;
 

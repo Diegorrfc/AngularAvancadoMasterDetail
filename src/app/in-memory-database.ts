@@ -13,7 +13,7 @@ export class InMemoryDataBase implements InMemoryDbService {
             { id: 5, nome: 'lazer5', description: 'aqui' }
 
         ];
-        console.log("Diego",{categories})
-        return {categories};
+        console.log('Diego', { categories });
+        return { categories };
     }
 }

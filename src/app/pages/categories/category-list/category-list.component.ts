@@ -13,13 +13,22 @@ export class CategoryListComponent implements OnInit {
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
-    
+
     this.categoryService.getAll()
-    .subscribe(
-      cat => this.categories = cat,
-      error=>alert('erro')
-     
-    )
+      .subscribe(
+        cat => this.categories = cat,
+        error => alert('erro')
+
+      );
+  }
+  deleteCategory(category) {
+    const mustDelete = confirm('Deseja excluir esse item?');
+    if (mustDelete) {
+      this.categoryService.delete(category.id).subscribe(
+        () => this.categories = this.categories.filter(ele => ele !== category),
+        () => alert('erro ao tentar excluir')
+      );
+    }    
   }
 
 }
